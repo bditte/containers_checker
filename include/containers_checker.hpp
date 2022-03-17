@@ -2,8 +2,11 @@
 # define CONTAINERS_CHECKER_HPP
 
 # include <iostream>
+	#if NAMESPACE == STD
+		# include <vector>
+	#else
+		# include "vector.hpp"
+	#endif
 
-# define FT	0
-# define STD 1
 
 #endif
