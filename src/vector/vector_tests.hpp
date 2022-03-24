@@ -1,10 +1,9 @@
 #ifndef VECTOR_TESTS_HPP
 # define VECTOR_TESTS_HPP
 
-#include "../../include/containers_checker.hpp"
-/*
+# include "../../include/containers_checker.hpp"
 
-*/
+
 template <class T>
 void	print_container(T vec)
 {
@@ -20,4 +19,29 @@ void	print_container(T vec)
 	std::cout << std::endl;
 }
 
+
+/*
+
+#include "vector_tests.hpp"
+typedef int								CURR_TYPE;
+typedef NAMESPACE::vector<CURR_TYPE>	container;
+
+#define SIZE 15
+
+int		main()
+{
+	print_time(START);
+
+	int			tab[SIZE];
+
+	for (int i = 0; i < SIZE; i++)
+		tab[i] = i * 6;
+
+	container	vec(tab, tab + SIZE);
+
+	print_time(END);
+	return (0);
+}
+
+*/
 #endif

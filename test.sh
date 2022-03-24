@@ -30,11 +30,12 @@ print_container_name()
 print_results()
 {
 	diff ${1} ${2} > ${3}/diffs/${4}_diffs.txt
+	echo -en ${WHITE} "OUTPUT "
 	if [[ $? == 0 ]]
 	then
-		echo -e ${GREEN} "GOOD"
+		echo -e ${GREEN} "[OK]"
 	else
-		echo -e ${RED} "ERROR"
+		echo -e ${RED} "[KO]"
 	fi
 }
 
@@ -46,15 +47,18 @@ exec_file()
 	std_output=$dir_output/std_${test_name}_output.txt
 	ft_output=$dir_output/ft_${test_name}_output.txt
 	
-	echo -en ${WHITE}"${test_name^} : "
+	#printf '\%s %-10s : ' ${WHITE} ${test_name}
+	echo -en ${WHITE}"${test_name^}\t : "
 
 	#compile with std containers
 	${CC} ${FLAGS} -I ${INCLUDE} -D NAMESPACE="std" ${1}
 	./a.out > ${std_output}
 	rm a.out
+
 	#compile with ft containers
 	${CC} ${FLAGS} -I ${INCLUDE} -D NAMESPACE="ft" ${1}
 	./a.out > ${ft_output}
+
 	print_results $std_output $ft_output $dir_output $test_name
 }
 
@@ -70,14 +74,14 @@ do_test ()
 	done
 }
 
-main()
-{
+function main (){
 	containers=(vector)
 	
 	for container in ${containers[@]}; do
 		print_container_name ${container}
 		do_test ${container}
 	done
-	rm a.out
+	rm a.out time
 }
+
 main;
