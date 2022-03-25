@@ -30,11 +30,12 @@ print_container_name()
 print_results()
 {
 	diff ${1} ${2} > ${3}/diffs/${4}_diffs.txt
-	echo -en ${WHITE} "OUTPUT "
 	if [[ $? == 0 ]]
 	then
+		echo -en ${WHITE} "OUTPUT "
 		echo -e ${GREEN} "[OK]"
 	else
+		echo -en ${WHITE} "OUTPUT "
 		echo -e ${RED} "[KO]"
 	fi
 }

@@ -15,8 +15,8 @@ void	print_container(T vec)
 
 	std::cout << "CONTENT : "  << std::endl;
 	for (t_it it = vec.begin(); it != vec.end(); it++)
-		std::cout << *it << std::endl;
-	std::cout << std::endl;
+		std::cout << *it << " ";
+	std::cout << std::endl << std::endl;
 }
 
 
@@ -30,6 +30,7 @@ typedef NAMESPACE::vector<CURR_TYPE>	container;
 
 int		main()
 {
+	std::cout << "******	PUSH_BACK TESTS		******" << std::endl;
 	print_time(START);
 
 	int			tab[SIZE];
