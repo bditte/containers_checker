@@ -19,30 +19,4 @@ void	print_container(T vec)
 	std::cout << std::endl << std::endl;
 }
 
-
-/*
-
-#include "vector_tests.hpp"
-typedef int								CURR_TYPE;
-typedef NAMESPACE::vector<CURR_TYPE>	container;
-
-#define SIZE 15
-
-int		main()
-{
-	std::cout << "******	PUSH_BACK TESTS		******" << std::endl;
-	print_time(START);
-
-	int			tab[SIZE];
-
-	for (int i = 0; i < SIZE; i++)
-		tab[i] = i * 6;
-
-	container	vec(tab, tab + SIZE);
-
-	print_time(END);
-	return (0);
-}
-
-*/
 #endif

@@ -63,10 +63,15 @@ exec_file()
 
 do_test ()
 {
+	test_files=$(find "${SRCS}${1}" -type f -name '*.cpp' | sort)
+
+	if [[ ${test_files[0]} == "" ]]
+	then
+		return ;
+	fi
+
 	mkdir -p ${OUTPUT_PATH}${1}
 	mkdir -p ${OUTPUT_PATH}${1}/diffs
-
-	test_files=$(find "${SRCS}${1}" -type f -name '*.cpp' | sort)
 
 	for file in ${test_files[@]}; do
 		exec_file $file ${1}
@@ -74,7 +79,13 @@ do_test ()
 }
 
 function main (){
-	containers=(vector)
+
+	if [[ ${1} ]]
+	then
+		containers=(${1});
+	else
+		containers=(stack vector map);
+	fi
 	
 	for container in ${containers[@]}; do
 		print_container_name ${container}
@@ -83,4 +94,4 @@ function main (){
 	rm a.out time
 }
 
-main;
+main ${1};

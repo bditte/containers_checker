@@ -10,9 +10,12 @@
 
 # include <vector>
 # include <map>
+# include <stack>
 
 # include "vector.hpp"
 # include "map.hpp"
+# include "stack.hpp"
+
 # define XSTR(x) STR(x)
 # define STR(x) #x
 
