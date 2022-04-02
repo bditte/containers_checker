@@ -71,7 +71,7 @@ void		swap_tests()
 
 void		erase_tests()
 {
-	std::cout << "******	INSERT TESTS		******" << std::endl;
+	std::cout << "******	ERASE TESTS		******" << std::endl;
 	
 	NAMESPACE::pair<CURR_TYPE, CURR_TYPE> 	tab[SIZE];
 	for (int i = 0; i < SIZE; i++)

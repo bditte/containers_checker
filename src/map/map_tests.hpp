@@ -3,7 +3,7 @@
 # include "../../include/containers_checker.hpp"
 
 template <class T>
-void	print_container(T map)
+void	print_container(T& map)
 {
 	typedef	typename T::iterator	t_it;
 
@@ -13,7 +13,7 @@ void	print_container(T map)
 
 	std::cout << "CONTENT : "  << std::endl;
 	for (t_it it = map.begin(); it != map.end(); it++)
-		std::cout << it->first << it->second << std::endl;
+		std::cout << it->first << " " << it->second << std::endl;
 	std::cout << std::endl;
 }
 /*
