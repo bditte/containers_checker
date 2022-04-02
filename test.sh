@@ -3,9 +3,9 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 WHITE='\033[1;37m'
 
-INCLUDE="../ft_containers/include/" #Change this line to your containers
-CC="clang++"
-FLAGS="-Wall -Werror -Wextra -std=c++98"
+INCLUDE="../include/" #Change this line to your containers
+CC="c++"
+FLAGS="-Wall -Werror -Wextra -std=c++98 "
 SRCS="./src/"
 OUTPUT_PATH="./outputs/"
 
@@ -50,13 +50,11 @@ exec_file()
 	echo -en ${WHITE}"${test_name^}\t : "
 
 	#compile with std containers
-	${CC} ${FLAGS} -I ${INCLUDE} -D NAMESPACE="std" ${1}
-	./a.out > ${std_output}
+	${CC} ${FLAGS} -I ${INCLUDE} -D NAMESPACE="std" ${1} && ./a.out > ${std_output}
 	rm a.out
 
 	#compile with ft containers
-	${CC} ${FLAGS} -I ${INCLUDE} -D NAMESPACE="ft" ${1}
-	./a.out > ${ft_output}
+	${CC} ${FLAGS} -I ${INCLUDE} -D NAMESPACE="ft" ${1} && ./a.out > ${ft_output}
 
 	print_results $std_output $ft_output $dir_output $test_name
 }

@@ -62,7 +62,7 @@ void	print_time(int start)
 
 	clock_t	end_time = clock();
 	double total_time = double(end_time - start_time) / double(CLOCKS_PER_SEC);
-	if (XSTR(NAMESPACE) == "std")
+	if ( !strcmp(XSTR(NAMESPACE), "std"))
 	{
 		std::ofstream	output;
 		output.open("time");

@@ -103,7 +103,7 @@ void	reserve_tests()
 	{
 		vec.reserve(vec.max_size() + 10);
 	}
-	catch (std::exception e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

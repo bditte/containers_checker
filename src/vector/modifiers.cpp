@@ -91,6 +91,8 @@ void		pop_back_tests()
 
 void		insert_tests()
 {
+	std::cout << "******	INSERT TESTS		******" << std::endl;
+
 	int			tab[SIZE];
 
 	for (int i = 0; i < SIZE; i++)
