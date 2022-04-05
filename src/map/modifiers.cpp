@@ -139,10 +139,10 @@ int main()
 
 	print_time(START);
 
-	insert_tests();
+/*	insert_tests();
 	erase_tests();
-	swap_tests();
-	clear_tests();
+*/	swap_tests();
+//	clear_tests();
 
 	print_time(END);
 

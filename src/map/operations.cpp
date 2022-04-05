@@ -196,12 +196,12 @@ int main()
 
 	print_time(START);
 
-	find_tests();
+//	find_tests();
 	count_tests();
-	lower_bound_tests();
+/*	lower_bound_tests();
 	upper_bound_tests();
 	equal_range_tests();
-	
+*/	
 	print_time(END);
 	return (0);
 }
