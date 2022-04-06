@@ -120,6 +120,18 @@ void		insert_tests()
 	}
 
 	print_container(vec);
+
+	vec.insert(vec.begin() + vec.size() / 2, 1000, 5);
+	print_container(vec);
+
+	vec.insert(vec.begin() + vec.size() / 2, 1003, 5);
+	print_container(vec);
+
+	vec.insert(vec.begin() + vec.size() / 2, 1005, 5);
+	print_container(vec);
+
+	vec.insert(vec.begin() + vec.size() / 2, 5005, 5);
+	print_container(vec);
 }
 
 void		erase_tests()
