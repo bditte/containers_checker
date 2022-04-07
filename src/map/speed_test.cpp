@@ -13,12 +13,12 @@ int main()
 	srand(65);
 
 	container map;
-	int i;
 
 	for (int i = 0; i < COUNT; i++)
 		map.insert(NAMESPACE::make_pair(rand(), rand()));
 
-	for (i = 0; i < COUNT / 2; i++)
+
+	while (!map.empty())
 		map.erase(map.begin());
 
 	print_container(map);
